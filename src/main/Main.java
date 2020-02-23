@@ -1,6 +1,7 @@
 package main;
 
 import defination.MyProgram;
+import defination.Person;
 
 import java.util.Scanner;
 
@@ -49,7 +50,9 @@ public class Main {
                     System.out.println("Wrong Choice!");
                     break;
 
-        }
+                }
 
+            }
+        }
     }
 }
