@@ -19,4 +19,13 @@ public class Node {
     Person getData() {
         return data;
     }
+    //setter method  for the node's next field
+    void setNext(Node next) {
+        this.next = next;
+    }
+
+    //setter method  for the node's data field
+    void setData(Person data) {
+        this.data = data;
+    }
 }
