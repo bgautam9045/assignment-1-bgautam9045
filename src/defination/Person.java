@@ -26,4 +26,5 @@ public class Person {
     public ArrayList<BigInteger> getContactList() {
         return contactList;
     }
+
 }
