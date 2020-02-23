@@ -3,6 +3,8 @@ package main;
 import defination.MyProgram;
 import defination.Person;
 
+import java.math.BigInteger;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -55,4 +57,38 @@ public class Main {
             }
         }
     }
+    //fetchDetails method to fetch the details at the time of insertion of the contact.
+    private static Person fetchDetails() {
+        final Scanner scanner = new Scanner(System.in);
+        System.out.println("You have chosen to add a new contact");
+        System.out.println("Please enter the name of the Person");
+        Person person = new Person();
+        System.out.print("First Name: ");
+        person.setFName(scanner.nextLine());
+        System.out.print("Last Name: ");
+        person.setLName(scanner.nextLine());
+        ArrayList<BigInteger> contactNumber = new ArrayList<>();
+        System.out.println("Would you like to add your contact number? (y/n):");
+        char response = scanner.next().charAt(0);
+        while (response == 'y' || response == 'Y') {
+            if (response == 'y' || response == 'Y') {
+                System.out.print("Contact Number: ");
+                contactNumber.add(scanner.nextBigInteger());
+                person.setContactList(contactNumber);
+                System.out.println("Would you like to add another contact number? (y/n):");
+                response = scanner.next().charAt(0);
+            } else {
+                response = 'n';
+            }
+        }
+        System.out.println("Would you like to add email address? (y/n):");
+        char response1 = scanner.next().charAt(0);
+        scanner.nextLine();
+        if (response1 == 'y' || response1 == 'Y') {
+            System.out.print("Email Address: ");
+            person.setEmail(scanner.nextLine());
+        }
+        return person;
+    }
 }
+
